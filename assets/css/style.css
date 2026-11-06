@@ -66,6 +66,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .quick a span{font-size:.78rem;color:var(--muted);line-height:1.6}
 .quick a:hover{border-color:var(--brand)}
 @media (max-width:900px){.quick ul{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.quick a{padding:14px 12px}.quick a span{letter-spacing:0;font-size:.74rem}}
 
 .home-intro{padding-block:72px 24px;display:grid;gap:22px;text-align:center;justify-items:center}
 .home-intro h2{font-size:clamp(1.3rem,2.6vw,1.7rem)}
