@@ -46,15 +46,15 @@ a{color:var(--deep)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--deep);outline-offset:2px;border-radius:4px}
 
 /* hero (top) */
-.hero{position:relative;height:clamp(440px,52vw,720px);background:url(../img/hero.jpg) center 60%/cover;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,.32) 45%,rgba(255,255,255,.05) 100%)}
+.hero{position:relative;height:clamp(440px,52vw,720px);background:url(../img/hero-plumeria-wide.jpg) 50% 75%/cover;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.18) 45%,rgba(255,255,255,0) 75%)}
 .hero-copy{position:relative;text-align:center;display:grid;justify-items:center;gap:14px;padding-top:clamp(48px,7vw,96px)}
 .eyebrow{font-size:.82rem;letter-spacing:.2em;color:var(--deep);font-weight:700}
 .hero h1{font-size:clamp(1.6rem,3.8vw,2.7rem);color:var(--ink);display:grid;gap:.35em}
 .hero h1 .h1-b{font-size:.62em;line-height:1.6}
 .hero h1 br.sp{display:none}
 .hero-copy .btn{margin-top:clamp(18px,3.4vw,44px)}
-@media (max-width:560px){.hero h1 br.sp{display:inline}}
+@media (max-width:560px){.hero h1 br.sp{display:inline}.hero{height:min(150vw,620px);background-image:url(../img/hero-plumeria-sp.jpg);background-position:50% 85%}.hero::before{background:linear-gradient(180deg,rgba(255,255,255,.62) 0%,rgba(255,255,255,.45) 38%,rgba(255,255,255,0) 62%)}.hero h1{text-shadow:0 0 10px rgba(255,255,255,.9),0 0 22px rgba(255,255,255,.7)}}
 .hero .lead{font-size:clamp(.88rem,1.4vw,1rem)}
 .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;padding:.75em 2.2em;border-radius:999px;box-shadow:0 4px 14px rgba(47,133,151,.25);font-size:.92rem}
 .btn:hover{background:var(--deep)}
