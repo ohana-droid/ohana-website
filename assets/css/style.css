@@ -54,7 +54,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .hero h1 .h1-b{font-size:.62em;line-height:1.6}
 .hero h1 br.sp{display:none}
 .hero-copy .btn{margin-top:clamp(18px,3.4vw,44px)}
-.hero .btn{background:#2f8597;border:2px solid #fff;box-shadow:0 6px 18px rgba(0,60,75,.35)}.hero .btn:hover{background:#256f7e}
+.hero .btn{background:#fff;color:#2f8597;box-shadow:0 6px 18px rgba(0,40,50,.35)}.hero .btn:hover{background:#eaf6f8;color:#256f7e}
+.hero::before{background:none}
+.hero h1{color:#fff;text-shadow:0 2px 4px rgba(10,40,50,.55),0 0 18px rgba(10,50,60,.45)}
 @media (max-width:560px){.hero h1 br.sp{display:inline}.hero{background-position:22% 50%}}
 .hero .lead{font-size:clamp(.88rem,1.4vw,1rem)}
 .btn{display:inline-block;background:var(--brand);color:#fff;font-weight:700;text-decoration:none;padding:.75em 2.2em;border-radius:999px;box-shadow:0 4px 14px rgba(47,133,151,.25);font-size:.92rem}
