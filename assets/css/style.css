@@ -95,7 +95,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .info td{font-variant-numeric:tabular-nums}
 .info dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 1.2em}
 .info dd{margin:0}
-@media (max-width:600px){.info th,.info td{display:block;width:auto}.info th{padding-bottom:6px;border-bottom:0}.info td{padding-top:6px}}
+@media (max-width:600px){.info th,.info td{display:block;width:auto}.info th{padding:10px 20px;border-bottom:0}.info td{padding:14px 20px}}
 .todo{color:var(--todo);font-size:.82rem;background:color-mix(in srgb,var(--todo) 9%,transparent);padding:1px 8px;border-radius:999px;margin-left:.4em;white-space:nowrap}
 .table-scroll{overflow-x:auto}
 
