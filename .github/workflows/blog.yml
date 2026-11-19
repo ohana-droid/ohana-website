@@ -1,0 +1,39 @@
+name: ブログを更新
+on:
+  repository_dispatch:
+    types: [microcms]      # microCMSで記事を公開・更新・削除したとき
+  workflow_dispatch:       # Actions画面から手動で実行
+  schedule:
+    - cron: '7 * * * *'    # 毎時7分に確認(記事は最大1時間ほどで反映)
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: blog
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: ブログのページを作る
+        env:
+          MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+        run: node tools/build-blog.mjs
+      - name: 変更があれば公開
+        run: |
+          git add -A blog.html blog
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git config user.name "blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "ブログを更新"
+          git push
+      - name: ホームページの再公開を依頼
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST repos/${{ github.repository }}/pages/builds || true
